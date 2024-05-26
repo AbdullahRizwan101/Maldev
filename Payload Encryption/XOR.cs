@@ -8,24 +8,6 @@ namespace XOR
 {
     class Program
     {
-        // Import necessary WinAPI functions
-        [DllImport("kernel32.dll")]
-        static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
-
-        [DllImport("kernel32.dll")]
-        static extern bool VirtualFree(IntPtr lpAddress, uint dwSize, uint dwFreeType);
-
-        [DllImport("kernel32.dll")]
-        static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, out uint lpThreadId);
-
-        [DllImport("kernel32.dll")]
-        static extern uint WaitForSingleObject(IntPtr hHandle, uint dwMilliseconds);
-
-        // Constants for memory allocation and protection
-        const uint MEM_COMMIT = 0x1000;
-        const uint MEM_RESERVE = 0x2000;
-        const uint PAGE_EXECUTE_READWRITE = 0x40;
-
 
         static string ConvertBytesToHexArray(byte[] bytes)
         {
